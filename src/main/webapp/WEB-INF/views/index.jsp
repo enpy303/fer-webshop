@@ -20,7 +20,7 @@
 
 <body>
 	
-	<header class="navbar navbar-fixed-top">
+<header class="navbar navbar-fixed-top">
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-4">
@@ -38,45 +38,45 @@
 	</div> 
 </header> 
 	
-	<div id="main-container" class="container container-navbar-offset">
-		
-		<br>
+<div id="main-container" class="container container-navbar-offset">
+	
+	<br>
 
-		<div class="row row-offset">
-			<p align="center"><strong>- Products -</strong></p>
+	<div class="row row-offset">
+		<p align="center"><strong>- Products -</strong></p>
+	</div>
+
+	<div class="row row-offset">
+		<div class="col-xs-4">
+			<ul class="list-unstyled product-list">
+				<li><a href="products">Computer Cases</a></li>
+				<li><a href="products">CPUs / Processors</a></li>
+				<li><a href="products">Fans, Heatsinks, Cooling</a></li>
+				<li><a href="products">GPUs/Video Graphic Cards</a></li>
+			</ul>
 		</div>
 
-		<div class="row row-offset">
-			<div class="col-xs-4">
-				<ul class="list-unstyled product-list">
-					<li><a href="products">Computer Cases</a></li>
-					<li><a href="products">CPUs / Processors</a></li>
-					<li><a href="products">Fans, Heatsinks, Cooling</a></li>
-					<li><a href="products">GPUs/Video Graphic Cards</a></li>
-				</ul>
-			</div>
+		<div class="col-xs-4">
+			<ul class="list-unstyled product-list">
+				<li><a href="products">Motherboards</a></li>
+				<li><a href="products">Hard Drives, Storage</a></li>
+				<li><a href="products">Hard Drive Enclosures</a></li>
+				<li><a href="products">Interface / Add-On Cards</a></li>
+			</ul>
+		</div>
 
-			<div class="col-xs-4">
-				<ul class="list-unstyled product-list">
-					<li><a href="products">Motherboards</a></li>
-					<li><a href="products">Hard Drives, Storage</a></li>
-					<li><a href="products">Hard Drive Enclosures</a></li>
-					<li><a href="products">Interface / Add-On Cards</a></li>
-				</ul>
-			</div>
-
-			<div class="col-xs-4">
-				<ul class="list-unstyled product-list">
-					<li><a href="products">Memory (RAM)</a></li>
-					<li><a href="products">Optical Drives</a></li> 
-					<li><a href="products">Power Supplies</a></li>
-					<li><a href="products">Racks/Accessories</a></li>
-				</ul>
-			</div>
+		<div class="col-xs-4">
+			<ul class="list-unstyled product-list">
+				<li><a href="products">Memory (RAM)</a></li>
+				<li><a href="products">Optical Drives</a></li> 
+				<li><a href="products">Power Supplies</a></li>
+				<li><a href="products">Racks/Accessories</a></li>
+			</ul>
 		</div>
 	</div>
-	
-	<footer class="navbar navbar-fixed-bottom">
+</div>
+
+<footer class="navbar navbar-fixed-bottom">
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12">
