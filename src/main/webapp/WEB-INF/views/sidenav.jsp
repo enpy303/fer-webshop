@@ -1,4 +1,4 @@
-<div id="sidenav" class="padding-10" data-spy="affix" data-offset-top="0">
+<div id="sidenav" data-spy="affix" data-offset-top="0">
 	<h3>Products</h3>
 	<ul id="left-product-list" class="list-unstyled">
 		<li><a href="products">Computer Cases</a></li>
