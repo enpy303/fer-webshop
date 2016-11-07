@@ -12,11 +12,11 @@ public class WebshopController {
     	return "index";
     }
     
-//    @RequestMapping("/products")
-//    public String products() {
-//		return "products";
-//	}
-//    
+    @RequestMapping("/products")
+    public String products() {
+		return "products";
+	}
+    
 //    @RequestMapping("/productinfo")
 //    public String productinfo() {
 //    	return "productinfo";
