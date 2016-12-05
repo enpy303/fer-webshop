@@ -17,23 +17,23 @@ public class WebshopController {
 		return "products";
 	}
     
-//    @RequestMapping("/productinfo")
-//    public String productinfo() {
-//    	return "productinfo";
-//    }
-//    
-//    @RequestMapping("/cart")
-//    public String cart() {
-//    	return "cart";
-//    }
-//    
-//    @RequestMapping("/userinfo")
-//    public String userinfo() {
-//    	return "userinfo";
-//    }
-//    
-//    @RequestMapping("/signin")
-//    public String signin() {
-//    	return "signin";
-//    }
+    @RequestMapping("/productinfo")
+    public String productinfo() {
+    	return "productinfo";
+    }
+    
+    @RequestMapping("/cart")
+    public String cart() {
+    	return "cart";
+    }
+    
+    @RequestMapping("/userinfo")
+    public String userinfo() {
+    	return "userinfo";
+    }
+    
+    @RequestMapping("/signin")
+    public String signin() {
+    	return "signin";
+    }
 }

@@ -35,8 +35,22 @@ a.navbar-title-link, a:hover.navbar-title-link {
 .container-navbar-offset {
 	margin-top: 70px;
 }
+#main-container {
+	margin-bottom: 50px;
+}
 
-.colored-div {
-/* 	border: 2px solid #d7eeec; */
-	text-align: center;
+/* Forms */
+.form-text {
+	font-size: 18px;
+}
+
+#signup-hr {
+	margin-top:	91px;   
+}
+
+/* Content Divs */
+.content {
+	background-color: white;
+	margin-top: 10px; 
+	padding: 10px; 
 }
