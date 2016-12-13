@@ -1,39 +1,49 @@
 package hr.fer.webshop2.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
 public class WebshopController {
-	
+
+    private final Logger logger = LoggerFactory.getLogger(WebshopController.class);
+
     @RequestMapping("/")
     public String root() {
-    	return "index";
+        logger.debug("Routing: /");
+        return "index";
     }
-    
-    @RequestMapping("/products")
+
+    @RequestMapping("/product")
     public String products() {
-		return "products";
-	}
-    
+        logger.debug("Routing: /product");
+        return "product";
+    }
+
     @RequestMapping("/productinfo")
     public String productinfo() {
-    	return "productinfo";
+        logger.debug("Routing: /productinfo");
+        return "productinfo";
     }
-    
+
     @RequestMapping("/cart")
     public String cart() {
-    	return "cart";
+        logger.debug("Routing: /cart");
+        return "cart";
     }
-    
+
     @RequestMapping("/userinfo")
     public String userinfo() {
-    	return "userinfo";
+        logger.debug("Routing: /userinfo");
+        return "userinfo";
     }
-    
+
     @RequestMapping("/signin")
     public String signin() {
-    	return "signin";
+        logger.debug("Routing: /signin");
+        return "signin";
     }
 }

@@ -21,8 +21,8 @@
 						<input type="text" name="username" class="form-control">
 						<p class="form-text">Password:</p>
 						<input type="password" name="password" class="form-control"> <br> 
-						<a class="btn btn-success" href="products">Log in</a>
-						<a class="btn btn-danger" href="products">Cancel</a>
+						<a class="btn btn-success" href="product">Log in</a>
+						<a class="btn btn-danger" href="product">Cancel</a>
 					</div>
 					<div class="col-xs-6 login-content">
 						<h1 class="text-primary">New users</h1>
@@ -31,7 +31,7 @@
 						<p class="form-text">Would you like to create an account?</p>
 						<hr id="signup-hr"> 
 						<a class="btn btn-success" href="userinfo">Sign Up</a> 
-						<a class="btn btn-danger" href="products">Cancel</a>
+						<a class="btn btn-danger" href="product">Cancel</a>
 					</div>
 				</div>
 			</div>

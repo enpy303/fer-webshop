@@ -39,8 +39,8 @@
 						</div>
 					</div>
 					<div >
-						<a class="btn btn-success" href="products">Confirm</a> 
-						<a class="btn btn-danger" href="products">Cancel</a>
+						<a class="btn btn-success" href="product">Confirm</a> 
+						<a class="btn btn-danger" href="product">Cancel</a>
 					</div>
 				</div>
 			</div>
