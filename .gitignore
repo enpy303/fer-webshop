@@ -14,3 +14,7 @@
 *.ear
 *.classh
 
+# node ignore
+node_modules/
+npm-debug.log
+
