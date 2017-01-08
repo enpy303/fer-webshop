@@ -13,6 +13,7 @@ var NavComponent = (function () {
     function NavComponent() {
         this.appName = 'FER Webshop';
         this.signIn = 'Log In | Sign Up';
+        this.testProperty = 'bla bla bla';
     }
     return NavComponent;
 }());

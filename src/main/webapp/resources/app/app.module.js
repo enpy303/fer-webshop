@@ -12,8 +12,17 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
+var router_1 = require("@angular/router");
 var app_component_1 = require("./app.component");
 var nav_component_1 = require("./component/nav.component");
+var footer_component_1 = require("./component/footer.component");
+var appRoutes = [
+    {
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full'
+    },
+];
 var AppModule = (function () {
     function AppModule() {
     }
@@ -25,10 +34,12 @@ AppModule = __decorate([
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
             http_1.HttpModule,
+            router_1.RouterModule.forRoot(appRoutes)
         ],
         declarations: [
             app_component_1.AppComponent,
             nav_component_1.NavComponent,
+            footer_component_1.FooterComponent
         ],
         providers: [],
         bootstrap: [app_component_1.AppComponent]
