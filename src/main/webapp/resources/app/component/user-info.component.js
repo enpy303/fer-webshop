@@ -9,19 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var NavComponent = (function () {
-    function NavComponent() {
-        this.appName = 'FER Webshop';
-        this.signIn = 'Log In | Sign Up';
+var UserInfoComponent = (function () {
+    function UserInfoComponent() {
     }
-    return NavComponent;
+    return UserInfoComponent;
 }());
-NavComponent = __decorate([
+UserInfoComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: 'app-nav',
-        templateUrl: 'nav.component.html'
+        selector: 'app-user-info',
+        templateUrl: 'user-info.component.html'
     }),
     __metadata("design:paramtypes", [])
-], NavComponent);
-exports.NavComponent = NavComponent;
+], UserInfoComponent);
+exports.UserInfoComponent = UserInfoComponent;

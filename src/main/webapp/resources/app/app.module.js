@@ -16,12 +16,51 @@ var router_1 = require("@angular/router");
 var app_component_1 = require("./app.component");
 var nav_component_1 = require("./component/nav.component");
 var footer_component_1 = require("./component/footer.component");
+var home_component_1 = require("./component/home.component");
+var product_component_1 = require("./component/product.component");
+var product_info_component_1 = require("./component/product-info.component");
+var sidenav_component_1 = require("./component/sidenav.component");
+var cart_component_1 = require("./component/cart.component");
+var signin_component_1 = require("./component/signin.component");
+var user_info_component_1 = require("./component/user-info.component");
 var appRoutes = [
     {
         path: '',
         redirectTo: '/home',
         pathMatch: 'full'
     },
+    {
+        path: 'home',
+        component: home_component_1.HomeComponent
+    },
+    {
+        path: 'product',
+        component: product_component_1.ProductComponent
+    },
+    {
+        path: 'productinfo',
+        component: product_info_component_1.ProductInfoComponent
+    },
+    {
+        path: 'cart',
+        component: cart_component_1.CartComponent
+    },
+    {
+        path: 'signin',
+        component: signin_component_1.SigninComponent
+    },
+    {
+        path: 'cart',
+        component: cart_component_1.CartComponent
+    },
+    {
+        path: 'userinfo',
+        component: user_info_component_1.UserInfoComponent
+    },
+    {
+        path: '**',
+        component: home_component_1.HomeComponent
+    }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -39,7 +78,14 @@ AppModule = __decorate([
         declarations: [
             app_component_1.AppComponent,
             nav_component_1.NavComponent,
-            footer_component_1.FooterComponent
+            footer_component_1.FooterComponent,
+            home_component_1.HomeComponent,
+            product_component_1.ProductComponent,
+            product_info_component_1.ProductInfoComponent,
+            sidenav_component_1.SidenavComponent,
+            cart_component_1.CartComponent,
+            signin_component_1.SigninComponent,
+            user_info_component_1.UserInfoComponent
         ],
         providers: [],
         bootstrap: [app_component_1.AppComponent]

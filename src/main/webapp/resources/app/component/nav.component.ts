@@ -8,5 +8,4 @@ import { Component } from '@angular/core';
 export class NavComponent {
     appName = 'FER Webshop';
     signIn = 'Log In | Sign Up';  
-    testProperty = 'bla bla bla';
 }
