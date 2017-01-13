@@ -5,16 +5,17 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { HomeComponent } from './component/home.component';
 import { NavComponent } from './component/nav.component';
-import { FooterComponent} from  './component/footer.component';
-import { HomeComponent} from  './component/home.component';
-import { ProductComponent} from  './component/product.component';
-import { ProductInfoComponent} from  './component/product-info.component';
-import { SidenavComponent} from  './component/sidenav.component';
-import { CartComponent} from  './component/cart.component';
-import { SigninComponent} from  './component/signin.component';
-import { UserInfoComponent} from  './component/user-info.component';
-        
+import { SidenavComponent } from './component/sidenav.component';
+import { ProductComponent } from './component/product.component';
+import { ProductInfoComponent } from './component/product-info.component';
+import { CartComponent } from './component/cart.component';
+import { SigninComponent } from './component/signin.component';
+import { UserInfoComponent } from './component/user-info.component';
+import { FooterComponent } from './component/footer.component';
+
+import { ProductService } from './service/product.service';
 
 const appRoutes: Routes = [
     {
@@ -43,10 +44,6 @@ const appRoutes: Routes = [
       component: SigninComponent
     },
     {
-      path: 'cart',
-      component: CartComponent
-    },
-    {
       path: 'userinfo',
       component: UserInfoComponent
     },
@@ -55,6 +52,7 @@ const appRoutes: Routes = [
       component: HomeComponent
     }
 ];
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -64,17 +62,17 @@ const appRoutes: Routes = [
     ],
     declarations: [
         AppComponent,
-        NavComponent,
-        FooterComponent,
         HomeComponent,
         ProductComponent,
         ProductInfoComponent,
+        NavComponent,
         SidenavComponent,
         CartComponent,
         SigninComponent,
-        UserInfoComponent
+        UserInfoComponent,
+        FooterComponent
     ],
-    providers: [ ],
+    providers: [ ProductService ],
     bootstrap: [ AppComponent ]
 })
 export class AppModule {

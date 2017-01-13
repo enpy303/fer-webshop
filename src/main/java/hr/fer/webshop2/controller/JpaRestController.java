@@ -2,6 +2,8 @@ package hr.fer.webshop2.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,11 +14,14 @@ import hr.fer.webshop2.service.JpaService;
 
 public class JpaRestController<T> {
 
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
     @Autowired
     protected JpaService<T> service;
 
     @RequestMapping(method = RequestMethod.GET)
     public List<T> findAll() {
+        logger.debug("JpaRestController - findAll()");
         return service.findAll();
     }
 

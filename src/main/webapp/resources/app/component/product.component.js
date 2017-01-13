@@ -9,17 +9,38 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var product_service_1 = require("../service/product.service");
 var ProductComponent = (function () {
-    function ProductComponent() {
+    function ProductComponent(productService) {
+        this.productService = productService;
     }
+    ProductComponent.prototype.ngOnInit = function () {
+        this.getProducts();
+    };
+    ProductComponent.prototype.getProduct = function (id) {
+        var _this = this;
+        this.productService.getProduct(id)
+            .subscribe(function (data) { return _this.selectedProduct = data; }, function (error) { return _this.errorMessage = error; });
+    };
+    ProductComponent.prototype.getProducts = function () {
+        var _this = this;
+        this.productService.getProducts()
+            .subscribe(function (data) {
+            _this.products = data;
+            console.dir(data);
+        }, function (error) { return _this.errorMessage = error; });
+    };
+    ProductComponent.prototype.isAvailable = function (product) {
+        return product.quantity > 0 ? 'Available' : 'Out of stock';
+    };
     return ProductComponent;
 }());
 ProductComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: 'app-product',
+        selector: 'app-home',
         templateUrl: 'product.component.html'
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [product_service_1.ProductService])
 ], ProductComponent);
 exports.ProductComponent = ProductComponent;

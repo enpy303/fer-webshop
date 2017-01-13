@@ -14,15 +14,16 @@ var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
 var router_1 = require("@angular/router");
 var app_component_1 = require("./app.component");
-var nav_component_1 = require("./component/nav.component");
-var footer_component_1 = require("./component/footer.component");
 var home_component_1 = require("./component/home.component");
+var nav_component_1 = require("./component/nav.component");
+var sidenav_component_1 = require("./component/sidenav.component");
 var product_component_1 = require("./component/product.component");
 var product_info_component_1 = require("./component/product-info.component");
-var sidenav_component_1 = require("./component/sidenav.component");
 var cart_component_1 = require("./component/cart.component");
 var signin_component_1 = require("./component/signin.component");
 var user_info_component_1 = require("./component/user-info.component");
+var footer_component_1 = require("./component/footer.component");
+var product_service_1 = require("./service/product.service");
 var appRoutes = [
     {
         path: '',
@@ -50,10 +51,6 @@ var appRoutes = [
         component: signin_component_1.SigninComponent
     },
     {
-        path: 'cart',
-        component: cart_component_1.CartComponent
-    },
-    {
         path: 'userinfo',
         component: user_info_component_1.UserInfoComponent
     },
@@ -77,17 +74,17 @@ AppModule = __decorate([
         ],
         declarations: [
             app_component_1.AppComponent,
-            nav_component_1.NavComponent,
-            footer_component_1.FooterComponent,
             home_component_1.HomeComponent,
             product_component_1.ProductComponent,
             product_info_component_1.ProductInfoComponent,
+            nav_component_1.NavComponent,
             sidenav_component_1.SidenavComponent,
             cart_component_1.CartComponent,
             signin_component_1.SigninComponent,
-            user_info_component_1.UserInfoComponent
+            user_info_component_1.UserInfoComponent,
+            footer_component_1.FooterComponent
         ],
-        providers: [],
+        providers: [product_service_1.ProductService],
         bootstrap: [app_component_1.AppComponent]
     }),
     __metadata("design:paramtypes", [])
