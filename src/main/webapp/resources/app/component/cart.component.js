@@ -9,9 +9,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var order_1 = require("../model/order");
+var product_service_1 = require("../service/product.service");
+var order_service_1 = require("../service/order.service");
+var router_1 = require("@angular/router");
 var CartComponent = (function () {
-    function CartComponent() {
+    function CartComponent(productService, orderService, route, router) {
+        this.productService = productService;
+        this.orderService = orderService;
+        this.route = route;
+        this.router = router;
+        this.order = new order_1.Order();
+        this.order.products = new Array();
     }
+    CartComponent.prototype.ngOnInit = function () {
+        this.addProduct(this.route.snapshot.params['id']);
+    };
+    CartComponent.prototype.addProduct = function (id) {
+        var _this = this;
+        this.orderService.addProduct(id, this.order)
+            .subscribe(function (data) { return _this.order = data; }, function (error) { return _this.errorMessage = error; });
+    };
+    CartComponent.prototype.getTotal = function () {
+        var retVal = 0;
+        for (var _i = 0, _a = this.order.products; _i < _a.length; _i++) {
+            var product = _a[_i];
+            retVal += product.price;
+        }
+        return retVal;
+    };
     return CartComponent;
 }());
 CartComponent = __decorate([
@@ -20,6 +46,9 @@ CartComponent = __decorate([
         selector: 'app-cart',
         templateUrl: 'cart.component.html'
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [product_service_1.ProductService,
+        order_service_1.OrderService,
+        router_1.ActivatedRoute,
+        router_1.Router])
 ], CartComponent);
 exports.CartComponent = CartComponent;

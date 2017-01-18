@@ -1,46 +1,51 @@
-<div class="container container-navbar-offset">
+
+	<div class="container container-navbar-offset">
 
 		<div class="row">
 			<div class="col-xs-4 col-sm-3">
-
 				<app-sidenav></app-sidenav>
-
 			</div>
 			<div class="col-xs-8 col-sm-9">
-				<div class="row content"> 
+				<div class="row thumbnail margin-right-5 padding-10"> 
 					<h1 class="text-primary">Current order</h1> 
 					<br>
 					<div class="table-responsive">
-						<table id="cart" class="table table-striped table-bordered"> 
+						<table id="cart" class="table table-striped table-bordered" 
+							cellspacing="0" width="100%">
 							<thead>
 								<tr>
 									<th>Image</th>
-									<th>Article</th>
+									<th>Product Id</th>
+									<th>Name</th>
+									<th>Description</th>
 									<th>Quantity</th>
-									<th>Refresh</th>
-									<th>Delete</th>
 									<th>Price</th>
 								</tr>
 							</thead>
-							<tbody>
+							<tbody *ngFor="let product of order.products">
 								<tr>
 									<td>No image</td>
-									<td>ASUS B150</td>
-									<td>1</td>
-									<td>img</td>
-									<td>del</td>
-									<td>$249.99</td>
+									<td>{{ product.id }}</td>
+									<td>{{ product.name }}</td>
+									<td>{{ product.description }}</td>
+									<td>{{ product.quantity }}</td>
+									<td>{{ product.price }}</td>
 								</tr>
+							</tbody>
+							
+						</table>
+						<table>
+							<tbody>
 								<tr>
-									<td><strong>Total</strong></td>
-									<td><strong>$249.99</strong></td>
+									<td><strong>Total &nbsp;</strong></td>
+									<td><strong>{{ getTotal() }} HRK </strong></td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
 					
 					<a class="btn btn-success" routerLink="/signin">CHECKOUT</a> 
-					<a class="btn btn-danger" routerLink="/product">CANCEL</a>
+					<a class="btn btn-info" routerLink="/product">CONTINUE</a>
 				</div>
 			</div>
 		</div>

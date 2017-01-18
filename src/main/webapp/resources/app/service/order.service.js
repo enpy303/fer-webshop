@@ -16,35 +16,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 var base_service_1 = require("../service/base.service");
-var ProductService = (function (_super) {
-    __extends(ProductService, _super);
-    function ProductService(http) {
+var OrderService = (function (_super) {
+    __extends(OrderService, _super);
+    function OrderService(http) {
         var _this = _super.call(this) || this;
         _this.http = http;
-        _this.url = '/webshop2/products';
+        _this.url = '/webshop2/orders';
         return _this;
     }
-    ProductService.prototype.getProduct = function (id) {
-        return this.http.get(this.url + '/' + id)
-            .map(this.extractData)
-            .catch(this.handleError);
-    };
-    ProductService.prototype.getProducts = function () {
-        return this.http.get(this.url)
-            .map(this.extractData)
-            .catch(this.handleError);
-    };
-    ProductService.prototype.saveProduct = function (product) {
+    OrderService.prototype.addProduct = function (id, order) {
         var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         var options = new http_1.RequestOptions({ headers: headers });
-        return this.http.post(this.url, product, options)
+        return this.http.post(this.url + '/' + id, order, options)
             .map(this.extractData)
             .catch(this.handleError);
     };
-    return ProductService;
+    return OrderService;
 }(base_service_1.BaseService));
-ProductService = __decorate([
+OrderService = __decorate([
     core_1.Injectable(),
     __metadata("design:paramtypes", [http_1.Http])
-], ProductService);
-exports.ProductService = ProductService;
+], OrderService);
+exports.OrderService = OrderService;

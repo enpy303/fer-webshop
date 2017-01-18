@@ -16,6 +16,7 @@ import { UserInfoComponent } from './component/user-info.component';
 import { FooterComponent } from './component/footer.component';
 
 import { ProductService } from './service/product.service';
+import { OrderService } from './service/order.service';
 
 const appRoutes: Routes = [
     {
@@ -32,11 +33,11 @@ const appRoutes: Routes = [
       component: ProductComponent
     },
     {
-      path: 'productinfo',
+      path: 'productinfo/:id',
       component: ProductInfoComponent
     },
     {
-      path: 'cart',
+      path: 'cart/:id',
       component: CartComponent
     },
     {
@@ -72,7 +73,10 @@ const appRoutes: Routes = [
         UserInfoComponent,
         FooterComponent
     ],
-    providers: [ ProductService ],
+    providers: [ 
+        ProductService,
+        OrderService
+    ],
     bootstrap: [ AppComponent ]
 })
 export class AppModule {

@@ -9,17 +9,37 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var product_1 = require("../model/product");
+var product_service_1 = require("../service/product.service");
+var router_1 = require("@angular/router");
 var ProductInfoComponent = (function () {
-    function ProductInfoComponent() {
+    function ProductInfoComponent(productService, route, router) {
+        this.productService = productService;
+        this.route = route;
+        this.router = router;
+        this.product = new product_1.Product();
     }
+    ProductInfoComponent.prototype.ngOnInit = function () {
+        this.getProduct(this.route.snapshot.params['id']);
+    };
+    ProductInfoComponent.prototype.getProduct = function (id) {
+        var _this = this;
+        this.productService.getProduct(id)
+            .subscribe(function (data) { return _this.product = data; }, function (error) { return _this.errorMessage = error; });
+    };
+    ProductInfoComponent.prototype.isAvailable = function (product) {
+        return product.quantity > 0 ? 'Available' : 'Out of stock';
+    };
     return ProductInfoComponent;
 }());
 ProductInfoComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: 'app-product-info',
+        selector: 'app-home',
         templateUrl: 'product-info.component.html'
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [product_service_1.ProductService,
+        router_1.ActivatedRoute,
+        router_1.Router])
 ], ProductInfoComponent);
 exports.ProductInfoComponent = ProductInfoComponent;

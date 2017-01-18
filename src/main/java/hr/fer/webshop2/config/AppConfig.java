@@ -7,6 +7,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
@@ -21,6 +22,14 @@ public class AppConfig extends WebMvcConfigurerAdapter {
     }
 
     @Bean
+    public InternalResourceViewResolver viewResolver() {
+        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+        viewResolver.setPrefix("/WEB-INF/views");
+        viewResolver.setSuffix(".jsp");
+        return viewResolver;
+    }
+
+    @Bean
     public WebMvcConfigurerAdapter forwardToIndex() {
         return new WebMvcConfigurerAdapter() {
             @Override
@@ -28,9 +37,9 @@ public class AppConfig extends WebMvcConfigurerAdapter {
                 registry.addViewController("/").setViewName(FORWARD_2_INDEX_HTML);
                 registry.addViewController("/home").setViewName(FORWARD_2_INDEX_HTML);
                 registry.addViewController("/product").setViewName(FORWARD_2_INDEX_HTML);
-                registry.addViewController("/productinfo").setViewName(FORWARD_2_INDEX_HTML);
-                registry.addViewController("/cart").setViewName(FORWARD_2_INDEX_HTML);
-                registry.addViewController("/userinfo").setViewName(FORWARD_2_INDEX_HTML);
+                registry.addViewController("/productinfo/**").setViewName(FORWARD_2_INDEX_HTML);
+                registry.addViewController("/cart/**").setViewName(FORWARD_2_INDEX_HTML);
+                registry.addViewController("/userinfo/**").setViewName(FORWARD_2_INDEX_HTML);
                 registry.addViewController("/signin").setViewName(FORWARD_2_INDEX_HTML);
             }
         };

@@ -24,6 +24,7 @@ var signin_component_1 = require("./component/signin.component");
 var user_info_component_1 = require("./component/user-info.component");
 var footer_component_1 = require("./component/footer.component");
 var product_service_1 = require("./service/product.service");
+var order_service_1 = require("./service/order.service");
 var appRoutes = [
     {
         path: '',
@@ -39,11 +40,11 @@ var appRoutes = [
         component: product_component_1.ProductComponent
     },
     {
-        path: 'productinfo',
+        path: 'productinfo/:id',
         component: product_info_component_1.ProductInfoComponent
     },
     {
-        path: 'cart',
+        path: 'cart/:id',
         component: cart_component_1.CartComponent
     },
     {
@@ -84,7 +85,10 @@ AppModule = __decorate([
             user_info_component_1.UserInfoComponent,
             footer_component_1.FooterComponent
         ],
-        providers: [product_service_1.ProductService],
+        providers: [
+            product_service_1.ProductService,
+            order_service_1.OrderService
+        ],
         bootstrap: [app_component_1.AppComponent]
     }),
     __metadata("design:paramtypes", [])

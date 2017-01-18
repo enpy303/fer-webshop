@@ -1,8 +1,38 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-@Component({
+import { Product } from '../model/product';
+import { ProductService } from '../service/product.service';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+
+@Component( {
     moduleId: module.id,
-    selector: 'app-product-info',
+    selector: 'app-home',
     templateUrl: 'product-info.component.html'
 })
-export class ProductInfoComponent { }
+export class ProductInfoComponent implements OnInit {
+
+    product = new Product();
+    errorMessage: string;
+
+    constructor(
+        private productService: ProductService,
+        private route: ActivatedRoute,
+        private router: Router ) {
+    }
+
+    ngOnInit() {
+        this.getProduct( this.route.snapshot.params['id'] );
+    }
+
+    getProduct( id: number ) {
+        this.productService.getProduct( id )
+            .subscribe(
+            data => this.product = data,
+            error => this.errorMessage = error );
+    }
+
+    isAvailable( product: Product ) {
+        return product.quantity > 0 ? 'Available' : 'Out of stock';
+    }
+
+}
