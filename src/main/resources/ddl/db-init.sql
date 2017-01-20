@@ -1,7 +1,6 @@
 /*
  * FER WEBSHOP DB INIT SCRIPT
  */
-
 DELETE FROM ADMIN."product_type" WHERE "id" IS NOT NULL;
 -- SELECT * FROM  ADMIN."product_type";
 
@@ -45,12 +44,38 @@ VALUES
 
 SELECT * FROM "product_type";
 
+DELETE FROM ADMIN."order_product" WHERE "Order_id" IS NOT NULL;
+DELETE FROM ADMIN."order" WHERE "id" IS NOT NULL;
+-- SELECT * FROM Admin."order";
 
+DELETE FROM ADMIN."order_state" WHERE "id" IS NOT NULL;
+-- SELECT * FROM Admin."order_state";
 
+INSERT INTO ADMIN."order_state"
+("id", "name")
+VALUES
+(0, 'initialized'),
+(1, 'confirmed'),
+(2, 'delivered'),
+(3, 'canceled');
 
+SELECT * FROM ADMIN."user";
+SELECT * FROM ADMIN."user_role";
 
+select ADMIN."user"."username", "role" from ADMIN."user", ADMIN."user_role" where ADMIN."user"."userRole_id"=ADMIN."user_role"."id";
 
+DELETE FROM "user_role" WHERE "id" IS NOT NULL;
 
+INSERT INTO "user_role"
+("id", "role")
+VALUES
+(0, 'ROLE_USER'),
+(1, 'ROLE_ADMIN');
 
+DELETE FROM "user" WHERE "id" IS NOT NULL;
 
+INSERT INTO "user" 
+("id", "first_name", "last_name", "password", "username", "userRole_id")
+VALUES
+(1, 'user', 'userich', 'pass', 'user', 0); 
 

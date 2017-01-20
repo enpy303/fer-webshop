@@ -41,6 +41,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
                 registry.addViewController("/cart/**").setViewName(FORWARD_2_INDEX_HTML);
                 registry.addViewController("/userinfo/**").setViewName(FORWARD_2_INDEX_HTML);
                 registry.addViewController("/signin").setViewName(FORWARD_2_INDEX_HTML);
+                registry.addViewController("/login").setViewName("/login");
             }
         };
     }
