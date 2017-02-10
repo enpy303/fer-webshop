@@ -17,6 +17,7 @@ import { FooterComponent } from './component/footer.component';
 
 import { ProductService } from './service/product.service';
 import { OrderService } from './service/order.service';
+import { UserService } from './service/user.service';
 
 const appRoutes: Routes = [
     {
@@ -75,7 +76,8 @@ const appRoutes: Routes = [
     ],
     providers: [ 
         ProductService,
-        OrderService
+        OrderService,
+        UserService
     ],
     bootstrap: [ AppComponent ]
 })

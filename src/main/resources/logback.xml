@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
-	<property name="DEV_HOME" value="/mnt/01CF4D97D5D5E900/dev/serengeti/projects/fer/logs/" />
+	<property name="DEV_HOME" value="/media/enpy/data/dev/serengeti/projects/fer/logs/" />
 	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
 		<layout class="ch.qos.logback.classic.PatternLayout">
 			<Pattern>

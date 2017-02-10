@@ -152,16 +152,27 @@
 					<!-- <goal>exec</goal> -->
 					<!-- </goals> -->
 					<!-- </execution> -->
+<!-- 					<execution> -->
+<!-- 						<id>exec-npm-run-tsc</id> -->
+<!-- 						<phase>generate-sources</phase> -->
+<!-- 						<configuration> -->
+<!-- 							<workingDirectory>${project.basedir}/src/main/webapp/resources</workingDirectory> -->
+<!-- 							<executable>npm</executable> -->
+<!-- 							<arguments> -->
+<!-- 								<argument>run</argument> -->
+<!-- 								<argument>tsc</argument> -->
+<!-- 							</arguments> -->
+<!-- 						</configuration> -->
+<!-- 						<goals> -->
+<!-- 							<goal>exec</goal> -->
+<!-- 						</goals> -->
+<!-- 					</execution> -->
 					<execution>
-						<id>exec-npm-run-tsc</id>
+						<id>exec-tsc</id>
 						<phase>generate-sources</phase>
 						<configuration>
 							<workingDirectory>${project.basedir}/src/main/webapp/resources</workingDirectory>
-							<executable>npm</executable>
-							<arguments>
-								<argument>run</argument>
-								<argument>tsc</argument>
-							</arguments>
+							<executable>tsc</executable>
 						</configuration>
 						<goals>
 							<goal>exec</goal>

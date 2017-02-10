@@ -14,7 +14,7 @@ export class ProductComponent implements OnInit {
     selectedProduct: Product;
     errorMessage: string;
     
-     constructor (
+    constructor (
         private productService: ProductService) {
     }
     
